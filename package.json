@@ -1,0 +1,25 @@
+{
+  "name": "nodeprojectstarwars",
+  "version": "1.0.0",
+  "description": "\"# nodeProjectStarWars\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackham-eric72/nodeProjectStarWars.git"
+  },
+  "author": "eric blackham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blackham-eric72/nodeProjectStarWars/issues"
+  },
+  "homepage": "https://github.com/blackham-eric72/nodeProjectStarWars#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "pg": "^7.4.1",
+    "star-wars-api": "^1.0.1"
+  }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+<body>
+<h1>Star Wars Application</h1>
+
+<form action="/getPerson/id" method ="post">
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input type="string" class="form-control" id="id" name = "id" style = "width:50%;">
+        </div>
+    <button type="submit" class="btn btn-default">Submit Form</button>
+</form>
+</body>
+</html>
