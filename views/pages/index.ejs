@@ -4,52 +4,21 @@
     <% include ../partials/header.ejs %>
     <link rel="stylesheet" href="../styles/style.css">
     <style>
-        body{
-            padding:20px;
-        }
-        #stName{
-            width:50%;
-            background-color:gold;
-        }
-        .jumbotron{
-            background-color:black;
-            color:gold;
-            text-align: center;
-        }
+   
     </style>
 </head>
 <body>
 <h1 class="jumbotron">Star Wars Application</h1>
-<div class="form-group">
-    <input class="form-control" id="stName" type="text">
-    <br><button onclick = "swSearch()" class="btn btn-primary">Search your nerdy little heart out!</button>
-</div>
+<h3 id="characterNum"></h3>
+<div id="savedCharacters"></div>
+
+    <input class="form-control" id="stName" type="text"><br>
+    <div class="buttonContainer">
+    <button onclick = "swSearch()" class="btn btn-primary">Search Star Wars Database</button>
+    <a class="btn btn-primary" onclick="getData()">View Saved Characters</a>
+    </div>
 <h3>Your search results will appear below: </h3>
 <p id="info"></p>
 </body>
-<script>
-    function swSearch() {
-        var searchName = document.getElementById('stName').value;
-        var url = "https://swapi.co/api/people/?search=" + searchName;
-
-        var swapi = new XMLHttpRequest();
-        swapi.open("GET", url, false);
-        swapi.send(null);
-        var r = JSON.parse(swapi.response);
-        console.log(r);
-        var data = r.results;
-        for (var i = 0; i < data.length; i++) {
-            var characterDetails = "<p>Name:" + data[i].name + " </p>";
-            characterDetails += "<ul>";
-            characterDetails += "<li> Born in the year: " + data[i].birth_year + "</li>";
-            characterDetails += "<li> Mass: " + data[i].mass + "</li>";
-            characterDetails += "<li> Height: " + data[i].height + "</li>";
-            characterDetails += "</ul>";
-            document.getElementById('info').innerHTML += characterDetails;
-        }
-    }
-    // var data = r.Search;
-    // console.log("This totally works");
-</script>
-<!--<script src="../views/scripts/js.js"></script>-->
+<script src="../scripts/js.js"></script>
 </html>

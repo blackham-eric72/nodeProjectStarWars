@@ -1,3 +1,56 @@
-*{
-    background-color:gold;
-}
+
+    body{
+        background-color:black;
+        padding: 20px;
+        
+    }
+    #stName{
+        width:50%;
+        background-color:gold;
+        margin:auto;
+    }
+    .jumbotron{
+        background-color:black;
+        color:gold;
+        text-align: center;
+    }
+    .btn{
+        display:block;
+        width:30%;
+        margin:auto;
+        background-color:black;
+        color:gold;
+        box-shadow: 0px 0px 10px gold;
+    }
+    .buttonContainer{
+        display: flex;
+    }
+    .displayText{
+        color:gold;
+    }
+    .btn.saveBtn{
+        margin:2px;
+    }
+    .infoInput{
+        background-color:black;
+        border:none;
+    }
+    #savedCharacters{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .localContainer{
+        padding:10px;
+        margin: 5px;
+        box-shadow: 0px 0px 5px gold;
+        transition:1s;
+    }
+    .localContainer:hover{
+        box-shadow:0px 0px 20px rgb(4, 204, 37);
+        margin: 20px;
+
+    }
+    .localContainer p {
+        color:white;
+    }
+      

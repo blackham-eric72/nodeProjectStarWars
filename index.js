@@ -6,14 +6,13 @@ var pg = require("pg"); // This is the postgres database connection module.
 var StarWarsAPI = require('star-wars-api');
 swapi = new StarWarsAPI();
 
-
 const connectionString = "postgres://web_user:webpass@localhost:5433/family_history";
 
 var urlEncodedParser = bodyParser.urlencoded({ extended: false});
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
