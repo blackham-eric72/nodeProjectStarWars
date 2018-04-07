@@ -2,12 +2,37 @@
     body{
         background-color:black;
         padding: 20px;
-        
+    
+    }
+    p{
+        margin: 4px 0;
+    }
+    #searchBar{
+        display:flex;
+        width:100%;
+        align-items:center;
+        margin-top:50px;
+
+    }
+    #welcome{
+        color:white;
+    }
+    #title {
+        transition: 3s;
+    }
+    #welcome h2 {
+        text-align:center;
     }
     #stName{
-        width:50%;
-        background-color:gold;
-        margin:auto;
+        width:75%;
+        background-color:black;
+        margin:auto 10px;
+        color:gold;
+        box-shadow: 0px 0px 10px gold;
+        transition:box-shadow .3s;
+    }
+    #stName:focus{
+        box-shadow: 0px 0px 20px rgb(21, 255, 0);
     }
     .jumbotron{
         background-color:black;
@@ -19,9 +44,14 @@
         width:30%;
         margin:auto;
         background-color:black;
-        color:gold;
-        box-shadow: 0px 0px 10px gold;
+        color:rgb(4, 204, 37);
+        box-shadow: 0px 0px 10px rgb(21, 255, 0);
     }
+    .btn:hover, .btn:active, .btn:focus{
+        background-color:rgb(4, 204, 37);
+        color:black;
+    }
+   
     .buttonContainer{
         display: flex;
     }
@@ -30,7 +60,14 @@
     }
     .btn.saveBtn{
         margin:2px;
+        color:red;
+        box-shadow: 0px 0px 10px red;
     }
+    .btn.saveBtn:hover{
+        background-color:red;
+        color:black;
+    }
+    
     .infoInput{
         background-color:black;
         border:none;
@@ -38,19 +75,237 @@
     #savedCharacters{
         display:flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
     .localContainer{
-        padding:10px;
-        margin: 5px;
-        box-shadow: 0px 0px 5px gold;
-        transition:1s;
-    }
-    .localContainer:hover{
-        box-shadow:0px 0px 20px rgb(4, 204, 37);
-        margin: 20px;
-
+        width: 200px;
+        margin: 15px;
     }
     .localContainer p {
         color:white;
     }
       
+    #lightSaber{
+        width:95%;
+        display:flex;
+        align-items:center;
+        justify-content: flex-start;
+        margin:auto;
+        animation: theForce 2s ease-in 1 ;
+    }
+    #lightSaber2{
+        width:95%;
+        display:flex;
+        align-items:center;
+        justify-content: flex-start;
+        margin:auto;
+        transform: rotate(180deg);
+        animation: theForce2 2s ease-in 1;
+    }
+      #lsHandle{
+        position:absolute;
+        width:70px;
+        transform: rotate(90deg);
+        z-index:2;
+    }
+    #lsHandle2{
+        position:absolute;
+        width:70px;
+        transform: rotate(90deg);
+        z-index:2;
+    }
+ 
+    #blade{
+        opacity:.7;
+        padding:0;
+        margin:0;
+        position: relative;
+        border-radius:40%;
+        height:10px;
+        background-color:rgb(64, 250, 64);
+        box-shadow: 0px 0px 10px rgba(177, 245, 177, 0.952);
+        /* z-index: -1; */
+        transition: 2s;
+        animation: openCloseSaber 1s ease-out 2s 2 alternate; 
+
+    }
+    #blade2{
+        opacity:.7;
+        padding:0;
+        margin:0;
+        position: relative;
+        border-radius:40%;
+        height: 13px;
+        background-color:red;
+        box-shadow: 0px 0px 10px rgba(247, 103, 103, 0.952);
+        /* z-index: -1; */
+        transition: 2s;
+        animation: openCloseSaber 1s ease-out 2s 2 alternate ; 
+
+    }
+
+
+    /* FLIP EFFECT */
+    .flipLabel {
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        display: block;
+        width: 100%;
+        height: 150px;
+        cursor: pointer;
+      }
+      
+      .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: all 600ms;
+        transition: all 600ms;
+        z-index: 20;
+      }
+      
+      .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        color:gold;
+        text-align: center;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+        padding:10px;
+        margin: 5px;
+        box-shadow: 0px 0px 5px gold;
+        transition:1s;
+      }
+        
+      .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+      }
+      .flipLabel:hover h3{
+        box-shadow: 0px 0px 15px gold;
+      }
+      .flipLabel:hover .card {
+        -webkit-transform: rotateX(20deg);
+        transform: rotateX(20deg);
+       
+      }
+      input.flipCheck {
+        display: none;
+      }
+      :checked + .card {
+        transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+      }
+      .flipLabel:hover :checked + .card {
+       
+        transform: rotateX(160deg);
+        -webkit-transform: rotateX(160deg); 
+      }
+      
+
+    /* END FLIP EFFECT */
+    footer{
+        margin-top:100px;
+        border-top: 3px solid rgb(73, 71, 71);;
+        display:flex;
+        background-color:black;
+        color: rgb(73, 71, 71);
+        flex-wrap: wrap;
+        font-size:.7rem;
+
+    }
+    footer p {
+        padding: 5px;
+    }
+    p.foot{
+        width:100%;
+        text-align:center;
+        border-bottom:2px solid rgb(73, 71, 71);
+    }
+    @keyframes theForce{
+        from{
+            transform: translate(-1000px,0px);
+        }
+        to{
+            transform:translate(0px,0px) ;
+        }
+  
+    }
+    @keyframes theForce2{
+        from{
+            transform: rotate(180deg) translate(-1000px,0px);
+        }
+        to{
+            transform:rotate(180deg) translate(0px,0px);
+        }
+    }
+    @keyframes openCloseSaber{
+        from {  width:0px;  }
+        to {width:400px; }
+    }
+    .open{
+        width:400px;
+        height: 15px;
+    }
+    .closed{
+        width:0; 
+    }
+    @keyframes glowingSaber{
+        0%{
+            box-shadow: 0px 0px 10px rgba(177, 245, 177, 0.952);
+        }
+        25%{
+            box-shadow: 0px 0px 15px rgba(177, 245, 177, 0.952);
+        }
+        50%{
+            box-shadow: 0px 0px 16px rgba(177, 245, 177, 0.952);
+        }
+        75%{
+            box-shadow: 0px 0px 10px rgba(177, 245, 177, 0.952);
+        }
+        100%{
+            box-shadow: 0px 0px 5px rgba(177, 245, 177, 0.952);
+        }
+    }
+    @keyframes glowingSaber2{
+        0%{
+            box-shadow: 0px 0px 10px rgba(240, 135, 135, 0.952);
+        }
+        25%{
+            box-shadow: 0px 0px 15px rgba(240, 135, 135, 0.952);
+        }
+        50%{
+            box-shadow: 0px 0px 16px rgba(240, 135, 135, 0.952);
+    
+        }
+        75%{
+            box-shadow: 0px 0px 10px rgba(240, 135, 135, 0.952);
+        }
+        100%{
+            box-shadow: 0px 0px 5px rgba(240, 135, 135, 0.952);
+        }
+    }
+    
+    @media screen and (min-width: 720px){
+
+        #lightSaber, #lightSaber2{
+            width: 50%;
+        }
+    }
+
+    @media screen and (min-width: 1024px){
+        body{
+            max-width:1000px;
+            margin:auto;
+            box-shadow: 0px 0px 10px gold;
+            height:100%;
+        }
+    }

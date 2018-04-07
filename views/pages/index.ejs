@@ -3,22 +3,54 @@
 <head>
     <% include ../partials/header.ejs %>
     <link rel="stylesheet" href="../styles/style.css">
-    <style>
-   
-    </style>
+
 </head>
-<body>
-<h1 class="jumbotron">Star Wars Application</h1>
+<body onload="getData()">
+  
+<div class="jumbotron">
+        <div id="lightSaber">
+                <img id="lsHandle" onclick="openSaber()" src="../images/handle.png" alt="light saber handle">
+                <div onclick="openSaber()"  id="handle"></div>
+               <div id="blade" class = "closed"></div>
+                </div>  
+ <h1 id="title">  Star Wars Collector </h1>
+ <div  id="lightSaber2">
+        <img id="lsHandle2" onclick="openSaber2()" src="../images/handle.png" alt="light saber handle">
+        <div onclick="openSaber()"  id="handle"></div>
+       <div id="blade2" class = "closed"></div>
+        </div> 
+</div>
+<div id="welcome">
+       
+<h2>Welcome </h2>
+<p> Welcome to Star Wars Collector. The goal here is to collect as many star wars characters as you can! You may
+    enter part of any character's name in the search bar to pull their basic info from the database. <br> 
+    Simply press the "Save" button to save the character to your local machine. <br>
+    A list of all of your saved characters will automatically replace this welcome screen when you have them saved! <br>
+    Enjoy!
+    -eric
+</p>
+</div>
 <h3 id="characterNum"></h3>
 <div id="savedCharacters"></div>
-
-    <input class="form-control" id="stName" type="text"><br>
-    <div class="buttonContainer">
-    <button onclick = "swSearch()" class="btn btn-primary">Search Star Wars Database</button>
-    <a class="btn btn-primary" onclick="getData()">View Saved Characters</a>
+<div id="searchBar">
+    <input class="form-control" id="stName" type="text" placeholder="search for characters! i.e. 'luke'" autofocus ><br>
+    
+    <button onclick = "swSearch()" class="btn btn-primary">Search</button>
+    <!-- <a class="btn btn-primary" onclick="getData()">View Saved Characters</a> -->
     </div>
 <h3>Your search results will appear below: </h3>
 <p id="info"></p>
+<footer>
+    <p class="foot">
+        &copy;2018 Eric Blackham | Last Updated: 4/7/2018
+    </p>
+    <div class="fairUse">
+    <p> Star Wars and all associated names are copyright Lucasfilm ltd.</p>
+    <p>The API in use is called SWAPI (open source starwars API *see https://swapi.co )</p>
+    <p> All material contained herein is used under the fair use clause of copyright law. </p>
+    </div>
+</footer>
 </body>
 <script src="../scripts/js.js"></script>
 </html>
